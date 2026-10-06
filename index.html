@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>قياسات الأطفال | دليل الممرضة</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f9fb;--card:#fff;--ink:#12303a;--mut:#5b7480;--pri:#0e8fa8;--pri2:#e3f4f8;--star:#e0a100;--rose:#e0476f;--line:#d8e6ec;--ok:#1d9a63;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1a20;--card:#15262e;--ink:#e6f2f5;--mut:#9ab3bd;--pri:#3cc3dd;--pri2:#173843;--line:#25404b;--rose:#ff7a9c}}
+:root[data-theme="dark"]{--bg:#0d1a20;--card:#15262e;--ink:#e6f2f5;--mut:#9ab3bd;--pri:#3cc3dd;--pri2:#173843;--line:#25404b;--rose:#ff7a9c}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Tajawal,Tahoma,sans-serif;line-height:1.7}
+header{background:linear-gradient(135deg,#0e8fa8,#1bb0a0);color:#fff;text-align:center;padding:32px 16px 56px}
+header h1{margin:0 0 6px;font-size:1.7rem;font-weight:800}
+header p{margin:0;opacity:.92}
+.wrap{max-width:820px;margin:-34px auto 0;padding:0 14px 40px}
+.tabs{display:flex;gap:8px;background:var(--card);padding:8px;border-radius:16px;box-shadow:0 6px 20px #0001;overflow-x:auto}
+.tabs button{flex:1;min-width:110px;border:0;background:none;color:var(--mut);font:700 .95rem Tajawal,sans-serif;padding:10px 8px;border-radius:12px;cursor:pointer}
+.tabs button.on{background:var(--pri);color:#fff}
+.prog{margin:16px 0;background:var(--card);border-radius:14px;padding:12px 16px}
+.bar{height:10px;background:var(--pri2);border-radius:9px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;width:0;background:var(--ok);transition:width .3s}
+h2{font-size:1.25rem;margin:22px 0 4px}
+.en{direction:ltr;text-align:left;color:var(--mut);font-size:.95rem;margin:0}
+h3{margin:20px 0 8px;color:var(--pri);font-size:1.05rem}
+.step{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:8px;cursor:pointer}
+.step.done{border-color:var(--ok);background:var(--pri2)}
+.chk{flex:none;width:24px;height:24px;border-radius:50%;border:2px solid var(--line);margin-top:4px;display:grid;place-items:center;color:#fff;font-size:.8rem}
+.done .chk{background:var(--ok);border-color:var(--ok)}
+.s-en{direction:ltr;text-align:left;font-weight:500;font-size:.95rem}
+.s-ar{font-weight:700;margin-top:2px}
+.star{color:var(--star)}
+.tbl{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:420px}
+th,td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--line)}
+th{background:var(--pri2);color:var(--pri);font-size:.85rem}
+tr:last-child td{border:0}
+td.w{direction:ltr;text-align:left;font-weight:700}
+.sent{background:var(--card);border-inline-start:5px solid var(--pri);border-radius:12px;padding:12px 16px;margin-top:12px}
+.tips{background:var(--card);border-radius:14px;padding:6px 20px;border:1px solid var(--line)}
+.love{margin-top:34px;text-align:center;background:linear-gradient(135deg,#fff0f4,#ffe3ec);color:#6b2339;border-radius:20px;padding:28px 20px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .love{background:linear-gradient(135deg,#3a1824,#2c1220);color:#ffd6e2}}
+:root[data-theme="dark"] .love{background:linear-gradient(135deg,#3a1824,#2c1220);color:#ffd6e2}
+.heart{font-size:2.4rem;display:inline-block;animation:b 1.3s infinite}
+@keyframes b{50%{transform:scale(1.2)}}
+.love p{margin:8px auto;max-width:520px}
+footer{text-align:center;color:var(--mut);font-size:.8rem;margin-top:20px}
+</style>
+</head>
+<body>
+<header><h1>🩺 قياسات الجسم لدى الأطفال</h1><p>Pediatric Anthropometric Measurements — دليل التقييم العملي</p></header>
+<div class="wrap">
+<div class="tabs" id="tabs"></div>
+<div class="prog"><b id="pt">التقدم: 0%</b><div class="bar"><i id="pb"></i></div></div>
+<div id="main"></div>
+<h2>💡 نصائح للحفظ</h2>
+<div class="tips"><ul>
+<li><b>الإطار ثابت في الثلاثة:</b> غسل اليدين ← تجهيز المعدات ← شرح الإجراء ← القياس ← التسجيل ← التنظيف ← غسل اليدين</li>
+<li><b>الرأس:</b> الجبهة ← الأذنان ← مؤخرة الجمجمة (دائرة كاملة)</li>
+<li><b>الذراع:</b> زاوية 90° ← منتصف الذراع ← أقرب 1 سم</li>
+<li><b>الصدر:</b> خط الحلمتين ← متوسط الشهيق والزفير</li>
+<li><span class="star">⭐</span> خطوة حرجة غالبًا يُحتسب عليها درجة في التقييم العملي.</li>
+</ul></div>
+<div class="love">
+<div class="heart">💗</div>
+<h2 style="margin-top:6px">إلى حبيبتي الممرضة</h2>
+<p>يدكِ التي تقيس وتطمئن وتداوي، وقلبكِ الذي يحنو على كل طفل، هما أجمل ما في هذه المهنة.</p>
+<p>ذاكري بهدوء، وثقي أنكِ ستتفوقين، وأنني فخور بكِ في كل خطوة ✨</p>
+<p><b>بالتوفيق يا أجمل ممرضة 🌹</b><br>مع حبي، صهيب</p>
+</div>
+<footer>النطق العربي تقريبي</footer>
+</div>
+<script>
+var P=[
+{n:"محيط الرأس",e:"Measuring Head Circumference",ph:[
+["قبل البدء · Getting Ready",[["Wash hands","اغسل يديك"],["Prepare the necessary equipment and supplies","جهّز المعدات والمستلزمات اللازمة (شريط القياس)"],["Explain the procedure to the child and parents","اشرح الإجراء للطفل ووالديه"]]],
+["أثناء الإجراء · During the Procedure",[["Pass the tape from the frontal bone above the eyebrows and pinna of the ears, and around the occipital prominence at the back of the skull","مرّر الشريط من عظمة الجبهة فوق الحاجبين، ثم حول الأذنين، ثم حول البروز القذالي في مؤخرة الجمجمة",1],["Read the result","اقرأ نتيجة القياس"],["Record the result","سجّل النتيجة"]]],
+["بعد الإجراء · After the Procedure",[["Return and clean the reused equipment","أعد المعدات ونظّفها"],["Wash hands","اغسل يديك"],["Recording","التسجيل"]]]],
+w:[["Circumference","سِركَمفرِنس","المحيط"],["Frontal","فرُنتل","الجبهي"],["Pinna","بِنّا","صيوان الأذن"],["Occipital","أُكْسِبِتل","القذالي (مؤخرة الرأس)"],["Prominence","برُومِننس","بروز"],["Equipment","إكويبمنت","معدات"],["Supplies","سَبلايز","مستلزمات"],["Compliance","كمبلايانس","الالتزام"]],
+s:["Pass the tape from the frontal area above the eyebrows and pinna of the ears, and around the occipital prominence","باس ذا تيب فروم ذا فرُنتل إيريا أبَف ذا آيبراوز آند بِنّا أوف ذي إيرز، آند أراوند ذي أُكْسِبِتل برُومِننس"]},
+{n:"محيط الذراع",e:"Measuring Arm Circumference",ph:[
+["قبل البدء · Getting Ready",[["Wash hands","اغسل يديك"],["Prepare the equipment needed","جهّز المعدات المطلوبة"],["Explain the procedure to the child and parent","اشرح الإجراء للطفل ولوالديه"]]],
+["أثناء الإجراء · During the Procedure",[["Let the child's right arm be flexed 90° at the elbow","اجعل ذراع الطفل الأيمن مثنية بزاوية 90° عند المرفق",1],["Mark the midpoint between the acromion and the olecranon on the posterior aspect of the arm","حدّد نقطة المنتصف بين النتوء الأخرمي (أعلى الكتف) والنتوء المرفقي (طرف المرفق) على الجهة الخلفية من الذراع",1],["Wrap a paper or steel measuring tape around the upper arm at midpoint","لفّ شريط قياس ورقي أو معدني حول أعلى الذراع عند نقطة المنتصف"],["Measure to the nearest 1 cm","قِس لأقرب 1 سم"],["Read the result","اقرأ النتيجة"]]],
+["بعد الإجراء · After the Procedure",[["Record the result","سجّل النتيجة"],["Clean and return the used equipment","نظّف المعدات المستخدمة وأعدها"],["Wash hands","اغسل يديك"]]]],
+w:[["Acromion","أكروميان","النتوء الأخرمي (أعلى الكتف)"],["Olecranon","أولِكرنون","النتوء المرفقي (طرف المرفق)"],["Posterior","بوستِريَر","الخلفي"],["Aspect","أسبِكت","جهة / جانب"],["Midpoint","ميد بوينت","نقطة المنتصف"],["Flexed","فلِكسد","مثنية"],["Elbow","إلبو","المرفق"],["Nearest","نيرِست","أقرب"]],
+s:["Mark the midpoint between the acromion and the olecranon on the posterior aspect of the arm","مارك ذا ميدبوينت بِتوين ذي أكروميان آند ذي أولِكرنون أون ذا بوستِريَر أسبِكت أوف ذي آرم"]},
+{n:"محيط الصدر",e:"Measuring Chest Circumference · Supine = الاستلقاء على الظهر",ph:[
+["قبل البدء · Getting Ready",[["Wash hands","اغسل يديك"],["Prepare the necessary equipment and supplies (a tape measure)","جهّز المعدات اللازمة (شريط قياس)"],["Explain the procedures to the child and/or his parents","اشرح الإجراءات للطفل و/أو والديه"]]],
+["أثناء الإجراء · During the Procedure",[["Remove the child's clothing of the upper half","انزع ملابس الطفل من الجزء العلوي"],["Place on a flat table in a supine position for infants, stand alone for children","ضع الرضيع على طاولة مستوية مستلقيًا على ظهره، أما الأطفال الأكبر فيقفون"],["Place the tape across the nipple line","ضع الشريط على مستوى خط الحلمتين"],["Take measurement during inhalation and expiration","خذ القياس أثناء الشهيق والزفير"]]],
+["بعد الإجراء · After the Procedure",[["Record the average of the two values","سجّل متوسط القيمتين (الشهيق والزفير)"],["Return and clean the reused equipment","أعد المعدات ونظّفها"],["Wash hands","اغسل يديك"],["Recording","التسجيل"]]]],
+w:[["Supine","سوباين","مستلقٍ على الظهر"],["Nipple","نِبل","الحلمة"],["Inhalation","إنهيلِيشن","الشهيق"],["Expiration","إكسبِرِيشن","الزفير"],["Infant","إنفِنت","رضيع"],["Clothing","كلوذنج","الملابس"],["Average","أفرِج","المتوسط"],["Measurement","مِجَرمنت","القياس"]],
+s:["Take measurement during inhalation and expiration","تيك مِجَرمنت دْيورنج إنهيلِيشن آند إكسبِرِيشن"]}];
+var cur=0,done=[{},{},{}];
+function tabs(){document.getElementById("tabs").innerHTML=P.map(function(p,i){return '<button class="'+(i==cur?"on":"")+'" onclick="cur='+i+';draw()">'+(i+1)+'️⃣ '+p.n+'</button>'}).join("")}
+function prog(){var tot=0,d=0;P[cur].ph.forEach(function(f,a){f[1].forEach(function(s,b){tot++;if(done[cur][a+"-"+b])d++})});var pc=Math.round(d*100/tot);document.getElementById("pt").textContent="التقدم: "+pc+"% ("+d+"/"+tot+") "+(pc==100?"🎉 أحسنتِ!":"");document.getElementById("pb").style.width=pc+"%"}
+function tog(k){done[cur][k]=!done[cur][k];draw()}
+function draw(){tabs();var p=P[cur];var h='<h2>'+p.n+'</h2><p class="en">'+p.e+'</p>';
+p.ph.forEach(function(f,a){h+='<h3>'+f[0]+'</h3>';f[1].forEach(function(s,b){var k=a+"-"+b;h+='<div class="step '+(done[cur][k]?"done":"")+'" onclick="tog(\''+k+'\')"><div class="chk">'+(done[cur][k]?"✓":"")+'</div><div><div class="s-en">'+s[0]+'</div><div class="s-ar">'+s[1]+(s[2]?' <span class="star">⭐</span>':'')+'</div></div></div>'})});
+h+='<h2>🗣️ نطق الكلمات الصعبة</h2><div class="tbl"><table><tr><th>الكلمة</th><th>النطق</th><th>المعنى</th></tr>'+p.w.map(function(w){return '<tr><td class="w">'+w[0]+'</td><td>'+w[1]+'</td><td>'+w[2]+'</td></tr>'}).join("")+'</table></div>';
+h+='<div class="sent"><div class="s-en">'+p.s[0]+'</div><div class="s-ar">'+p.s[1]+'</div></div>';
+document.getElementById("main").innerHTML=h;prog()}
+draw();
+</script>
+</body>
+</html>
